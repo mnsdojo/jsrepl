@@ -1,5 +1,8 @@
 mod repl;
 
 fn main() {
-    repl::cli::start_repl();
+    match repl::cli::start_repl() {
+        Ok(_) => {}
+        Err(e) => eprintln!("Error starting repl : {:?}", e),
+    }
 }
