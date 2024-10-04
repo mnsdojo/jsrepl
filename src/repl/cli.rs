@@ -8,7 +8,7 @@ pub fn start_repl() -> Result<(), Box<dyn std::error::Error>> {
 
     //init the line editor
     let mut editor = DefaultEditor::new()?;
-
+    
     if editor.load_history("history.txt").is_err() {
         println!("{}", "No previous history".yellow());
     }
