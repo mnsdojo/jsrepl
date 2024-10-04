@@ -1,7 +1,5 @@
-use jsrepl::colors::Colorize as _;
-
+mod repl;
 
 fn main() {
-    println!("{}","Hello there".green().bold())
+    repl::cli::start_repl();
 }
-
