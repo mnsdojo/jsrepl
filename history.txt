@@ -1,0 +1,4 @@
+#V2
+console.log("hello")
+interface Hello{}
+const helo = "hello";

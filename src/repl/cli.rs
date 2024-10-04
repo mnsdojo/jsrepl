@@ -1,18 +1,20 @@
 use rustyline::{error::ReadlineError, DefaultEditor};
 
-use crate::repl::color::Colorize;
+use crate::repl::{color::Colorize, syntax};
 
 pub fn start_repl() -> Result<(), Box<dyn std::error::Error>> {
     println!("{}", "jsRepl".green().bold());
     println!("{}", "Type 'exit' to quit".green().italic());
 
     //init the line editor
-    let mut editor = DefaultEditor::new()?;
-    
+    let mut editor = DefaultEditor::new()?; 
+
+  
     if editor.load_history("history.txt").is_err() {
         println!("{}", "No previous history".yellow());
     }
 
+    let highlighter = syntax::Highlighter::new()?;
 
     loop {
         let readline = editor.readline(">> ");
@@ -25,6 +27,7 @@ pub fn start_repl() -> Result<(), Box<dyn std::error::Error>> {
                 }
 
                 editor.add_history_entry(input)?;
+                highlighter.highlight(input)?;
             }
             Err(ReadlineError::Interrupted) => {
                 println!("Ctrl-C pressed, exiting...");
