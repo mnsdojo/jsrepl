@@ -1,3 +1,3 @@
 # jsrepl
 
-Simple jsRepl Made with rust :) (in progress)
+Simple jsRepl Made with rust  (in progress)
