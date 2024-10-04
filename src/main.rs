@@ -1,3 +1,7 @@
+use jsrepl::colors::Colorize as _;
+
+
 fn main() {
-    println!("Hello, world!");
+    println!("{}","Hello there".green().bold())
 }
+
