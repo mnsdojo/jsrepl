@@ -2,3 +2,11 @@
 console.log("hello")
 interface Hello{}
 const helo = "hello";
+console.log("hello")
+1 - 1
+console.log("hello")
+conosole.log("hello")
+console.log("hello")
+clearr
+clear
+console.log("hello")
